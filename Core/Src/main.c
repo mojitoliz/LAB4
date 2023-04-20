@@ -107,7 +107,6 @@ int main(void)
 	 	  if(timestamp < HAL_GetTick())
 	 	  {
 	 		  timestamp = HAL_GetTick()+10;
-
 	 		  Vfeedback = arm_pid_f32(&PID, setposition - position);
 	 		  position = PlantSimulation (Vfeedback);
 	 	  }
