@@ -54,7 +54,7 @@ float error = 0;
 float last_error = 0;
 float integralE = 0;
 float debydt = 0;
-float kp = 50;
+float kp = 100;
 float ki = 0.01;
 float kd = 0;
 float u = 0;
@@ -141,7 +141,6 @@ int main(void)
 		 u = (kp*error) + (kd*debydt) + (ki*integralE);
 
 		 duty = fabs(u);
-		 if(duty > 1000){ duty = 1000;}
 
 		 if(u < 0){
 			 __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, duty);
